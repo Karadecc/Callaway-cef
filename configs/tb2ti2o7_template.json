@@ -1,0 +1,36 @@
+{
+  "_notes": [
+    "Template. Every number below is a PLACEHOLDER of the right order of magnitude.",
+    "v: average sound velocity (ultrasound / elastic constants of the compound).",
+    "thetaD: Debye temperature (specific heat of the non-magnetic analogue).",
+    "levels: take E0, delta and the moments from a published CEF analysis (neutrons) and cite it.",
+    "sites: H || [111] -> [[0.25, 1.0], [0.75, 0.3333]];  H || [1-10] (the H perp [111] data of Li et al.) -> [[0.5, 0.8165], [0.5, 0.0]].",
+    "Li et al. 2013 quote a Lande factor ~10-14 along the local axis (Malkin 2010), i.e. m ~ 5-7 mu_B here, and ~18 K for the first excited doublet."
+  ],
+  "fixed": {"v": 3500.0, "thetaD": 350.0, "b": 4.0},
+
+  "reference": {
+    "data": "data/y2ti2o7_kappa_H0.csv",
+    "free": ["L", "A", "B"],
+    "init": {"L": 1e-4, "A": 1e2, "B": 1e5}
+  },
+
+  "magnetic": {
+    "data": "data/tb2ti2o7_kappa.csv",
+    "Hmax": 0.0,
+    "free": ["C_0_0", "C_0_1", "E1"],
+    "init": {"C_0_0": 1e8, "C_0_1": 1e9, "E1": 18.0},
+    "bounds": {"E1": [15.0, 21.0]}
+  },
+
+  "levels": {
+    "multiplets": [
+      {"E0": 0.0,  "deg": 2, "delta": 1.5, "m": 5.0, "_what": "ground quasi-doublet"},
+      {"E0": 18.0, "deg": 2, "delta": 0.0, "m": 3.0, "_what": "first excited doublet"}
+    ],
+    "transitions": [[0, 0], [0, 1]],
+    "sites": [[0.25, 1.0], [0.75, 0.3333]],
+    "population": "difference",
+    "width": 0.05
+  }
+}
