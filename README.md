@@ -1,4 +1,4 @@
-# callaway-cef
+# Callaway-CEF
 
 Phonon thermal conductivity of rare-earth magnetic insulators in a Callaway model, with
 resonant phonon scattering on crystal-electric-field (CEF) levels and its evolution in
